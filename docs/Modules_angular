@@ -1,0 +1,33 @@
+types of Module:::
+
+1.) feature --> inward, outward
+
+2.) shared --> this module will have import->{componentName} also export ->{componentName} as this module will be used by others as well
+	e.g ImageModule (can b used by inward,outward both)
+
+3.) core or Service module --> just focuses on service so just provider->{AuthService,anyOtherservice}
+	rest of the modules can import serviceModule to make other modules cleaner
+
+
+So a Broader picture will be as below
+
+Core Moudlue  ------------------------------App Module
+					    |       | 
+					    |       |
+					    |       |
+				Feature Module1   Feature Module2
+					|		|
+					|		|
+					|		|
+					Shared 	   Module
+
+
+
+BINDING
+
+interpolation {{}} -> one way Data binding from CLASS to TEMPLATE
+property Binding [] -> one way Data binding from CLASS to TEMPLATE // <img [src]="imgUrl" />
+
+event Binding () -> one way Data binding from  TEMPLATE to CLASS //can execute Handlers <button (click)="increment()">click</button>
+
+two way binding [()]
