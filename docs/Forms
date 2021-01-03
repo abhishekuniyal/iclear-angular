@@ -1,0 +1,28 @@
+Types of forms:
+1.) Reactive
+2.) Template driven
+
+standard building block used by both reactive & template
+* Form group:
+* Form control:
+* Form array:
+* ControlValueAccessor : It creates a bridge between Angular FormControl instances and native DOM elements.
+
+Template drive:: (e.g sibling1)
+import FormsModule from @angular/forms
+Validations:: required,email required,maxlength,minlength,
+ng-touched : controls have been visited
+ng-untouched : controls have not been visited
+ng-dirty : control-value has been changed
+ng-pristine : control-value has not been changed
+ng-valid: Controls value are valid
+ng-invalid: Controls value are Invalid
+
+
+Reactive Forms:: (e.g sibling2)
+import ReactiveFormsModule from @angular/forms
+
+setValue() ==> will have to set all formcontrols else error :used while getting values from other service
+patchValue() => can set partial vaues in the form     :used while getting values from other service
+
+

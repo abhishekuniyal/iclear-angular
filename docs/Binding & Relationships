@@ -1,0 +1,29 @@
+************BINDING (e.g App.componennt.html line 5) ******************
+
+interpolation {{}} -> one way Data binding from CLASS to TEMPLATE
+property Binding [] -> one way Data binding from CLASS to TEMPLATE // <img [src]="imgUrl" [disabled]="isDisabled" />
+
+event Binding () -> one way Data binding from  TEMPLATE to CLASS //can execute Handlers <button (click)="increment()">click</button>
+
+two way binding [()] => import browserModule and FormsModule (e.g Line 29) 
+
+*************Relationships*********
+
+Accessing dom elements template-> component (e.g App.componennt.html line 27)
+@ViewChild -> use ElementRef change in onViewInit() where all dom changes initialized  : To refer a single elements(single html dom) from view
+@ViewChildren -> use ElementRef change in onViewInit() where all dom changes initialized; can be used to refer multiple elements(refer a collections) (e.g app.component.ts LINE 14/25)
+
+Parent-Child
+* Parent -> child -> use @Input from @angular/core (e.g App.componennt.html line 17)
+* Child -> Parent -> use @Output var =new EventEmitter()  from @angular/core and var.emit('value'); (e.g App.componennt.html line 21)
+*ngOnchanges() can also trace changes
+
+
+Sibling-Relationships (e.g Sibing1Component.ts, Sibing2Component.ts, sharedService.ts)
+
+* can use BehaviorSubject('') to pass values between 2 sibling components
+* create a sharedService with BehaviorSubject('') refernce and use.next(val) to set and return suject as Observable<any> o get
+
+
+
+

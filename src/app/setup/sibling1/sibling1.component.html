@@ -1,0 +1,15 @@
+<p>sibling1 works!</p>
+
+<button type="button" (click)="passToSibling2()"> Pass_To_sibling2</button>
+
+
+<div class="container">
+    <form #form="ngForm" (ngSubmit) = "onSubmit(form.value)">
+        Username: <input type="text" name="username" ngModel required maxlength="2">
+        Password: <input type="password" name="password" ngModel>
+        <input type="email" name="email" ngModel placeholder="Email: " email required #email="ngModel">
+        <span *ngIf="email.touched && !email.valid"> Please enter email</span>
+        <button type="submit" [disabled]="!form.valid">LogIn</button>
+    </form>
+
+</div>

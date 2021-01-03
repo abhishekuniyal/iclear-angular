@@ -23,11 +23,3 @@ Core Moudlue  ------------------------------App Module
 
 
 
-BINDING
-
-interpolation {{}} -> one way Data binding from CLASS to TEMPLATE
-property Binding [] -> one way Data binding from CLASS to TEMPLATE // <img [src]="imgUrl" />
-
-event Binding () -> one way Data binding from  TEMPLATE to CLASS //can execute Handlers <button (click)="increment()">click</button>
-
-two way binding [()]

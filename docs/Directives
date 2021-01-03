@@ -1,0 +1,41 @@
+*******Directives**********
+Directives are instructions in the dom and specify how to place your components and business logic in Angular.
+Types ( e.g bank-branch.component.html)
+* Component  --> used in Main class.contains detail of how componentshould be processed,instantiated and used in runtime.
+* Structural --> strats with * , used to amnipulate & change the structure of the dom. e.g *ngIf,*ngFor,*ngSwitch
+* Attribute  --> used to change the behaviour & look of the dom e.g [ngClass], [ngStyle]. To dynamically update look n feel e.g if country is UK set background-color as red and apply css class to <p> to yellow
+
+Custom Directive --> own directive with dom manipulation log (e.g bank-branch.component.html LINE 20)
+e.g lets say u want to higlight the color as red whereve this directive is used.
+	Steps: 	ng g d highlighter
+		add in decartions in setup.module.ts
+		inject ElementRef as we will be accessing Dom elements
+		use(selector) in html without [] 
+
+
+*****************Pipes******************
+
+Built in pipes (bank-branch.component.html)
+
+{{pipes|uppercase}}
+{{pipes|lowercase}}
+{{650|currency:'INR'}}
+{{date|date:'shortTime'}}
+{{date|date:'dd/MM/yyyy'}}
+{{21.23| number:'2.3-4'}} 
+<!-- : minimum digits before . minimum digits after decimal, maximum digits after decimal -->
+{{jsonVal | json}}
+{{0.0400 | percent}}
+{{arr|slice:2:6}}
+async pipe osbervable|async
+pure/impure pipes => pure to be loaded only once when components loaded, impure for every change
+e.g {{8 | sqrt}}
+    {{8 | sqrt}}  => if pipe pure to be called to be called only once else twice
+
+
+custom pipes :: (e.g bank-branch.component.html LINE 20)
+ng g p sqrt 
+add in declartion in setup.module.ts
+sqrt will have transform method to take arg and return. Pipe and PipeTransform to be imported from @angular/core
+
+

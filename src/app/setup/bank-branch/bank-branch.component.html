@@ -1,0 +1,49 @@
+<p>bank-branch works!</p>
+
+<router-outlet></router-outlet>
+
+{{pipes|uppercase}}
+{{pipes|lowercase}}
+
+{{650|currency:'INR'}}
+{{date|date:'shortTime'}}
+{{date|date:'dd/MM/yyyy'}}
+
+{{21.23| number:'2.3-4'}} 
+<!-- : minimum digits before . minimum digits after decimal, maximum digits after decimal -->
+
+{{jsonVal | json}}
+
+{{0.0400 | percent}}
+
+{{arr|slice:2:6}}
+
+<!-- Custom pipe for sq root-->
+{{64 | sqrt}}
+
+
+<div class="container">
+
+
+    <div  class="row" *ngIf="showFruits ;then fruitsTemplate else fruitsTemplate">
+    </div>
+
+    <ng-template #fruitsTemplate>
+        <li [ngStyle]="{'background-color':getColor()}" *ngFor = "let fruit of fruits">
+            {{fruit}}
+        </li>
+    </ng-template>
+
+    <div [ngSwitch] ="selectedVal">
+        <div *ngSwitchCase ="1"> One</div>
+        <div *ngSwitchCase ="2"> Two</div>
+    </div>
+
+    <p appHighlighter > This paragraph to show highlighter custom directive.Change Background color</p>
+</div>
+
+
+<div class="container">
+    <a [routerLink]="['sibling1']">Go to Sibling1</a>
+    <button type="button" (click) = "routeToSibling1()"> Go to Sibling1</button>
+</div>
